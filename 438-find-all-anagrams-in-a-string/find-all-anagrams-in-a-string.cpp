@@ -9,8 +9,8 @@ public:
     }
     vector<int> findAnagrams(string s, string p) {
         vector<int> ans;
-        int n = (int)s.length();
-        int k = (int)p.length();
+        int n = s.length();
+        int k = p.length();
         if (n < k) return ans;
 
         int freq[26] ={0};
