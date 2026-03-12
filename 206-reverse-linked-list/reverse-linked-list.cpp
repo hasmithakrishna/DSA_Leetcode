@@ -10,19 +10,18 @@
  */
 class Solution {
 public:
+ListNode* head;
+    ListNode* reverse(ListNode* q, ListNode* p){
+        if(!p) return q;
+        ListNode* result = reverse(p,p->next);
+        p->next = q;
+
+        return result;
+    }
     ListNode* reverseList(ListNode* head) {
-        if(!head) return head;
-        ListNode *p = head;
-        ListNode *q = NULL;
-        ListNode *r = NULL;
-        while(p != 0){
-            r = q;
-            q = p;
-            p = p->next;
-            q->next = r;
-        }
-        head = q;
-        return head;
+        this->head = head;
+        return reverse(NULL, head);
+
         
     }
 };
