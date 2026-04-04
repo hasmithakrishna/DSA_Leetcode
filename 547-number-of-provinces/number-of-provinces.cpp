@@ -3,7 +3,7 @@ class Solution {
     void dfs(int Node, vector<int>& vis, vector<vector<int>> isConnected){
         vis[Node] = 1;
         for(int i=0; i<isConnected.size(); i++){
-            if(!vis[i] && isConnected[Node][i]){
+            if(!vis[i] && isConnected[Node][i] && i != Node){
                 dfs(i, vis, isConnected);
             }
 
